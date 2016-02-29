@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script src='jspm_packages/system.js'></script>
+    <script src='jspm.browser.js'></script>
+    <script src='jspm.config.js'></script>
+    <!--remove to load individual files-->
+    <script src='src_build/vendor.min.js'></script>
+</head>
+<body>
+
+    <div id='main'>
+
+    </div>
+    <script>
+        System.config({
+            packages: {
+                src: {
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('src/main')
+    </script>
+
+</body>
+</html>
