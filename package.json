@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bundle": "jspm bundle src/main.js src_build/vendor.min.js --minify",
-    "build": "jspm build src/main.js src_build/vendor.min.js --minify",
+    "bundle": "jspm bundle src/_lib.js src_build/_lib.min.js --minify",
+    "build": "jspm build src/main.js src_build/main.min.js --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,6 +16,7 @@
     "react-dom": "^0.14.7"
   },
   "devDependencies": {
+    "chokidar-socket-emitter": "^0.5.0",
     "systemjs-builder": "^0.15.10"
   },
   "jspm": {
@@ -26,7 +27,8 @@
     },
     "devDependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.6.0",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.7"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.7",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.6"
     },
     "peerDependencies": {
       "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",

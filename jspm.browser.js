@@ -9,5 +9,6 @@ SystemJS.config({
   packages: {
     "src": {}
   }
+  ,trace: true
   ,production: true
 });

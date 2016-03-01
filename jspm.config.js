@@ -5,9 +5,12 @@ SystemJS.config({
         "github:*/*.json"
     ],
     transpiler: "plugin-babel",
-    "babelOptions": {
-        "plugins": ["babel-plugin-transform-react-jsx"]
+    babelOptions: {
+        "plugins": [
+            "babel-plugin-transform-react-jsx"
+        ]
     },
+
     map: {
         "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.6.0",
         "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
@@ -21,6 +24,7 @@ SystemJS.config({
         "react": "npm:react@0.14.7",
         "react-dom": "npm:react-dom@0.14.7",
         "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
+        "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.6",
         "tty": "github:jspm/nodelibs-tty@0.2.0-alpha",
         "util": "github:jspm/nodelibs-util@0.2.0-alpha"
     },
@@ -29,15 +33,11 @@ SystemJS.config({
         "scratch": {
             "main": "src/main.js"
         },
-        "jspm-react-component": {
-            "main": "component.js",
-            "format": "esm",
-            "meta": {
-                "*.js": {
-                    "babelOptions": {
-                        "plugins": ["babel-plugin-transform-react-jsx"]
-                    }
-                }
+        "github:capaj/systemjs-hot-reloader@0.5.6": {
+            "map": {
+                "debug": "npm:debug@2.2.0",
+                "socket.io-client": "github:socketio/socket.io-client@1.4.5",
+                "weakee": "npm:weakee@1.0.0"
             }
         },
         "github:jspm/nodelibs-buffer@0.2.0-alpha": {

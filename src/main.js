@@ -1,40 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+//import 'systemjs-hot-reloader/default-listener.js';
+//
+//export function __reload(m) {
+//    if (m.component.state)
+//        component.setState(m.component.state);
+//}
 
-var Jsx = <jsx></jsx>;
+//import { React, ReactDOM } from './_lib.js';
+//import { List } from './components/List.js';
 
-var ListItem = React.createClass({
-    render: function() {
-        return <li>n --> {this.props.index}</li>
-    }
-});
+var _lib = require('./_lib.js');
+var React = _lib.React,
+    ReactDOM = _lib.ReactDOM;
+var List = require('./components-es5/List.js');
 
-var List = React.createClass({
-    render: function() {
-        var rows = this.props.rows.map(function(n) {
-            return <ListItem index={n} />;
-        });
-        return <ul>
-            {rows}
-        </ul>
-    }
-});
 
-ReactDOM.render(
-    <List rows={[1,2,3,4,5]} />,
-    document.getElementById('main')
-);
-
-ReactDOM.render(
-    <ListItem index={"hi"} />,
-    document.getElementById('alt')
-);
+var numbers = [],
+    n = 10000;
+while (n--) {
+    numbers.push(n);
+}
 
 window.__react_test = function(rows) {
     ReactDOM.render(
-        <List rows={rows} />,
+        React.createElement(List, {rows: rows}),
         document.getElementById('main')
     );
 };
 
 console.log('hmm...');
+
+window.__react_test(numbers);
