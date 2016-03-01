@@ -33,6 +33,13 @@ are contained in src:
     main.js  - sample entry point and application boot
 ````
 
+### Installation
+
+    npm i
+    jspm install
+
+(installing npm modules with jspm > jspm install npm:module_name)
+
 ### What is JSPM, SystemJS, or React
 
 SystemJS: loads modules in many formats (CJS, ES6, AMD), with plugins (babel, TS, JSX) with no build step, in the browser. SystemJS also has a bundler, for production.
