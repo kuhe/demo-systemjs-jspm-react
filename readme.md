@@ -36,13 +36,16 @@ are contained in src:
 ### What is JSPM, SystemJS, or React
 
 SystemJS: loads modules in many formats (CJS, ES6, AMD), with plugins (babel, TS, JSX) with no build step, in the browser. SystemJS also has a bundler, for production.
+It works without a local build step or watcher.
+
 JSPM: a package manager just for SystemJS, to allow you to write "require('react')" in your browser code, and magically have it work. Otherwise you'd have to manually
 map the module 'react' to its location in node_modules or bower_components.
+
 React: view rendering...
 
 ### Configuration Modes
 
-1. You didn't run any build or bundle:
+1| You didn't run any build or bundle:
 ````
 <head>
     <script src='jspm_packages/system.js'></script>
@@ -70,7 +73,7 @@ React: view rendering...
 </body>
 ````
 
-2. You bundled the library via npm run bundle:
+2| You bundled the library via npm run bundle:
 ````
 <head>
     <script src='jspm_packages/system.js'></script>
@@ -80,6 +83,7 @@ React: view rendering...
 </head>
 <body>
     This imports react minified, but your own application code asynchronously.
+    A good mix of load speed and ease of development. But no future JS features.
     Doesn't work for transpilation (ES6/JSX)
     <script>
         System.config({
@@ -94,7 +98,7 @@ React: view rendering...
 </body>
 ````
 
-3. You built the application fully. (currently doesn't work, minification error)
+3| You built the application fully. (currently doesn't work, minification error)
 ````
 <head>
     <script src='src_build/main.min.js'></script>
