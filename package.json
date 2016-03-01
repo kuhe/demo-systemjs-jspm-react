@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bundle": "jspm bundle src/_lib.js src_build/_lib.min.js --minify",
-    "build": "jspm build src/main.js src_build/main.min.js --minify",
+    "build": "jspm build src/main.js src_build/main.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
