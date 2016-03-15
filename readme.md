@@ -90,8 +90,7 @@ React: view rendering...
 </head>
 <body>
     This imports react minified, but your own application code asynchronously.
-    A good mix of load speed and ease of development. But no future JS features.
-    Doesn't work for transpilation (ES6/JSX)
+    A good mix of load speed and ease of development.
     <script>
         System.config({
             packages: {
@@ -105,15 +104,26 @@ React: view rendering...
 </body>
 ````
 
-3| You built the application fully. (currently doesn't work, minification error)
+3| You bundled the application fully. Including your app code and the libraries.
 ````
 <head>
-    <script src='src_build/main.min.js'></script>
+        <script src='jspm_packages/system.js'></script>
+        <script src='jspm.browser.js'></script>
+        <script src='jspm.config.js'></script>
+
+        <script src='src_build/main.min.js'></script>
 </head>
 <body>
     ...
     <script>
-        // no need to call system import
+        System.config({
+            packages: {
+                src: {
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('src/main')
     </script>
 </body>
 ````
