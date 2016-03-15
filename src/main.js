@@ -5,13 +5,13 @@
 //        component.setState(m.component.state);
 //}
 
-//import { React, ReactDOM } from './_lib.js';
-//import { List } from './components/List.js';
+import { React, ReactDOM } from './_lib.js';
+import { List } from './components/List.js';
 
-var _lib = require('./_lib.js');
-var React = _lib.React,
-    ReactDOM = _lib.ReactDOM;
-var List = require('./components-es5/List.js');
+//var _lib = require('./_lib.js');
+//var React = _lib.React,
+//    ReactDOM = _lib.ReactDOM;
+//var List = require('./components-es5/List.js');
 
 
 var numbers = [],

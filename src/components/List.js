@@ -1,8 +1,14 @@
 import { React, ReactDOM } from '../_lib.js';
 
 var ListItem = React.createClass({
+    getInitialState: function() {
+        return {index: this.props.index};
+    },
+    click: function(e) {
+        this.setState({index: 5});
+    },
     render: function() {
-        return <li>n --> {this.props.index}</li>
+        return <li onClick={this.click}>n --> {this.state.index}</li>
     }
 });
 
