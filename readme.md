@@ -2,6 +2,8 @@
 
 ### Installation
 
+First clone this repository, then in the root:
+
     npm i
     jspm install
 
