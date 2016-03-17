@@ -1,38 +1,43 @@
 SystemJS.config({
-    packageConfigPaths: [
-        "npm:@*/*.json",
-        "npm:*.json",
-        "github:*/*.json"
-    ],
     transpiler: "plugin-babel",
     babelOptions: {
         "plugins": [
             "babel-plugin-transform-react-jsx"
         ]
     },
+    packages: {
+        "scratch": {
+            "main": "src/main.js"
+        }
+    }
+});
 
+SystemJS.config({
+    packageConfigPaths: [
+        "npm:@*/*.json",
+        "npm:*.json",
+        "github:*/*.json"
+    ],
     map: {
         "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@6.6.0",
         "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
-        "core-js": "npm:core-js@1.2.6",
+        "core-js": "npm:core-js@2.2.0",
         "events": "github:jspm/nodelibs-events@0.2.0-alpha",
         "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
+        "lodash": "npm:lodash@3.10.1",
         "net": "github:jspm/nodelibs-net@0.2.0-alpha",
         "path": "github:jspm/nodelibs-path@0.2.0-alpha",
-        "plugin-babel": "npm:systemjs-plugin-babel@0.0.7",
+        "plugin-babel": "npm:systemjs-plugin-babel@0.0.8",
         "process": "github:jspm/nodelibs-process@0.2.0-alpha",
         "react": "npm:react@0.14.7",
         "react-dom": "npm:react-dom@0.14.7",
         "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
         "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.6",
+        "systemjs-plugin-babel": "npm:systemjs-plugin-babel@0.0.8",
         "tty": "github:jspm/nodelibs-tty@0.2.0-alpha",
         "util": "github:jspm/nodelibs-util@0.2.0-alpha"
     },
-
     packages: {
-        "scratch": {
-            "main": "src/main.js"
-        },
         "github:capaj/systemjs-hot-reloader@0.5.6": {
             "map": {
                 "debug": "npm:debug@2.2.0",
@@ -120,7 +125,7 @@ SystemJS.config({
         },
         "npm:buffer@4.5.0": {
             "map": {
-                "base64-js": "npm:base64-js@1.0.4",
+                "base64-js": "npm:base64-js@1.1.1",
                 "ieee754": "npm:ieee754@1.1.6",
                 "isarray": "npm:isarray@1.0.0"
             }

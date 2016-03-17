@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bundle": "jspm bundle src/_lib.js src_build/_lib.min.js --minify",
+    "bundle-dev": "jspm bundle src/_lib-dev.js src_build/_lib-dev.js",
     "bundle-app": "jspm bundle src/main.js src_build/main.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,8 +22,10 @@
   "jspm": {
     "name": "scratch",
     "dependencies": {
+      "lodash": "npm:lodash@^4.6.1",
       "react": "npm:react@^0.14.7",
-      "react-dom": "npm:react-dom@^0.14.7"
+      "react-dom": "npm:react-dom@^0.14.7",
+      "systemjs-plugin-babel": "npm:systemjs-plugin-babel@^0.0.8"
     },
     "devDependencies": {
       "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.6.0",
@@ -31,7 +34,7 @@
     },
     "peerDependencies": {
       "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
-      "core-js": "npm:core-js@^1.2.0",
+      "core-js": "npm:core-js@^2.2.0",
       "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
       "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
       "net": "github:jspm/nodelibs-net@^0.2.0-alpha",

@@ -3,11 +3,17 @@
     <script src='jspm_packages/system.js'></script>
     <script src='jspm.browser.js'></script>
     <script src='jspm.config.js'></script>
-    <!--Dev App: load _lib and System load main-->
+
+    <!--Only pick one of the following:-->
+
+    <!--1: Dev App (Plain JS): load _lib [npm run bundle]-->
     <!--<script src='src_build/_lib.min.js'></script>-->
 
-    <!--Bundled App, just load main.min-->
-    <script src='src_build/main.min.js'></script>
+    <!--2: Dev App (Harmony): load _lib-dev [npm run bundle-dev]-->
+    <script src='src_build/_lib-dev.js' charset="utf-8"></script>
+
+    <!--3: Bundled App, just load main.min [npm run bundle-app]-->
+    <!--<script src='src_build/main.min.js'></script>-->
 </head>
 <body>
 
