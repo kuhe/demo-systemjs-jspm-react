@@ -1,8 +1,15 @@
 #### JSPM 0.17 (beta) examples (optionally with ES6/JSX for React).
 
-### What?
+### Installation
 
-You get 3 bundling modes: Normal, Harmony, and Production
+    npm i
+    jspm install
+
+(installing additional npm modules with jspm > jspm install npm:module_name)
+
+### What is this?
+
+You get 3 bundling modes for JS apps: Normal, Harmony, and Production
 
 ````
 npm run bundle
@@ -43,13 +50,6 @@ are contained in src:
     _lib.js  - aggregation of packaged external libraries
     main.js  - sample entry point and application boot
 ````
-
-### Installation
-
-    npm i
-    jspm install
-
-(installing npm modules with jspm > jspm install npm:module_name)
 
 ### What is JSPM, SystemJS, or React
 

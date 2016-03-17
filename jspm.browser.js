@@ -1,5 +1,5 @@
 SystemJS.config({
-  baseURL: "/scratch",
+  baseURL: "/demo-systemjs-jspm-react",
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*",
