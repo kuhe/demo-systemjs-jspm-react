@@ -23,17 +23,17 @@ Each bundle operation packages your libraries into a single file, but loads your
 
 They give you, respectively
 
-* CJS in the browser with neither build step nor watchers (edit and reload)
+1| CJS in the browser with neither build step nor watchers (edit and reload)
 
-Suitable for developing regular JS, jQuery, Angular, Vue etc. that mainly utilize ES5
+- Suitable for developing regular JS, jQuery, Angular, Vue etc. that only use browser-supported JS.
 
-* ES6/JSX in the browser with neither build step nor watchers (edit and reload, but slower)
+2| ES6/JSX in the browser with neither build step nor watchers (edit and reload, but slower)
 
-Suitable for developing ES6 applications, including React (JSX). Todo: Add support for TypeScript (Angular2)?
+- Suitable for developing ES6 applications, including React (JSX). Todo: Add support for TypeScript (Angular2)?
 
-* Your app in a single file
+3| Your app in a single file
 
-Suitable for production.
+- Suitable for production.
 
 #### Notes:
 
