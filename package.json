@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "bundle": "jspm bundle src/_lib.js src_build/_lib.min.js --minify",
-    "bundle-dev": "jspm bundle src/_lib-dev.js src_build/_lib-dev.js",
-    "bundle-app": "jspm bundle src/main.js src_build/main.min.js",
+    "bundle-harmony": "jspm bundle src/_lib-harmony.js src_build/_lib-harmony.js",
+    "bundle-prod": "jspm bundle src/main.js src_build/main.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

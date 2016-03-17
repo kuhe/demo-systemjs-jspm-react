@@ -59880,22 +59880,18 @@ System.registerDynamic("npm:babel-plugin-transform-react-jsx@6.6.0/lib/index.js"
   return module.exports;
 });
 
-System.registerDynamic("scratch/_lib-dev.js", ["react", "react-dom", "systemjs-plugin-babel", "../jspm_packages/npm/babel-plugin-transform-react-jsx@6.6.0/lib/index.js"], true, function($__require, exports, module) {
+System.registerDynamic("scratch/_lib-harmony.js", ["react", "react-dom", "systemjs-plugin-babel", "../jspm_packages/npm/babel-plugin-transform-react-jsx@6.6.0/lib/index.js"], true, function($__require, exports, module) {
   ;
   var define,
       global = this,
       GLOBAL = this;
-  var React = $__require('react');
-  var ReactDOM = $__require('react-dom');
   if (1) {
+    $__require('react');
+    $__require('react-dom');
     $__require('systemjs-plugin-babel');
     $__require('../jspm_packages/npm/babel-plugin-transform-react-jsx@6.6.0/lib/index.js');
   }
-  module.exports = {
-    React: React,
-    ReactDOM: ReactDOM
-  };
   return module.exports;
 });
 
-//# sourceMappingURL=_lib-dev.js.map
+//# sourceMappingURL=_lib-harmony.js.map

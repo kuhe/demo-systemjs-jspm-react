@@ -1,26 +1,37 @@
-#### JSPM 0.17 (beta) working with React.
+#### JSPM 0.17 (beta) examples (optionally with ES6/JSX for React).
 
-JS tooling is truly horrible as of March 1st, 2016, and has been for quite some time.
+### What?
 
-Like, 2 to 15 years or so depending on who you ask. This doesn't fix any of that. This was actually
-more of an exercise in experiencing how horrible it is and how hard it was to get this configuration running.
-And, it probably won't work in 3 weeks as api-breaking changes are made at random to any portion of its dependencies.
+You get 3 bundling modes: Normal, Harmony, and Production
+
+````
+npm run bundle
+npm run bundle-harmony
+npm run bundle-prod
+````
+
+Each bundle operation packages your libraries into a single file, but loads your own application code asynchronously.
+
+They give you, respectively
+
+* CJS in the browser with neither build step nor watchers (edit and reload)
+* ES6/JSX in the browser with neither build step nor watchers (edit and reload, but slower)
+* Your app in a single file
 
 #### Notes:
 
-ES6 (Babel) + JSX support is possible, but it's slow as hell in dynamic load (over 200 files to import).
+JS tooling is truly horrible as of March 1st, 2016, and has been for quite some time. Like, 2 to 15 years or so depending on who you ask.
 
-Recommend sticking to ES5 for quicker load speed. Or try and get a hot-reload working (don't).
+_This doesn't fix any of that (sad chuckle)._
 
-#### Build
+This was actually more of an exercise in experiencing how horrible it is and how hard it was to get this configuration running.
+And, it probably won't work in 3 weeks as api-breaking changes are made at random to any portion of its dependencies.
 
-Bundles/builds assume your external libraries are imported to _lib.js and that your entry point is main.js.
+#### Build Assumptions
 
-npm run bundle: this bundles the _lib.js file (i.e. React), leaving your own files imported from main.js to be loaded asynchronously.
+Your application entry point is src/main.js.
 
-npm run build: you must reconfigure the head to only import your built file, since this is the standalone static version.
-
-For a full asynch load (slow), remove the bundle file from loading in your HTML.
+Your libraries are imported in _lib.js and (Harmony only) matched in _lib-harmony.js.
 
 ### Examples
 
@@ -52,78 +63,4 @@ React: view rendering...
 
 ### Configuration Modes
 
-1| You didn't run any build or bundle:
-````
-<head>
-    <script src='jspm_packages/system.js'></script>
-    <script src='jspm.browser.js'></script>
-    <script src='jspm.config.js'></script>
-</head>
-<body>
-    This can handle ES6 and JSX, but is slow as hell since it imports 300 files worth of
-    React and Babel before being able to run your code.
-    I would've liked to find a pre-bundled Babel, but I couldn't.
-
-    jspm.browser is a light browser config for pathing.
-    jspm.config is mostly a path config for the system.js loader. It is
-    constructed automatically as you use JSPM to install modules.
-    <script>
-        System.config({
-            packages: {
-                src: {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('src/main')
-    </script>
-</body>
-````
-
-2| You bundled the library via npm run bundle:
-````
-<head>
-    <script src='jspm_packages/system.js'></script>
-    <script src='jspm.browser.js'></script>
-    <script src='jspm.config.js'></script>
-    <script src='src_build/_lib.min.js'></script>
-</head>
-<body>
-    This imports react minified, but your own application code asynchronously.
-    A good mix of load speed and ease of development.
-    <script>
-        System.config({
-            packages: {
-                src: {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('src/main')
-    </script>
-</body>
-````
-
-3| You bundled the application fully. Including your app code and the libraries.
-````
-<head>
-        <script src='jspm_packages/system.js'></script>
-        <script src='jspm.browser.js'></script>
-        <script src='jspm.config.js'></script>
-
-        <script src='src_build/main.min.js'></script>
-</head>
-<body>
-    ...
-    <script>
-        System.config({
-            packages: {
-                src: {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('src/main')
-    </script>
-</body>
-````
+See index.html or src/main.js for how to configure the 3 bundle modes (Normal, Harmony, and Production).
