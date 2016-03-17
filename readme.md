@@ -74,3 +74,14 @@ React: view rendering...
 ### Configuration Modes
 
 See index.html or src/main.js for how to configure the 3 bundle modes (Normal, Harmony, and Production).
+
+### Why?
+
+[Torvalds](https://www.youtube.com/watch?v=AxkGKtVNdik)
+
+CVS, damn it! I'm fine with a local watcher for development, when I have git, when I have branches, real, cheap branches.
+
+Unfortunately, we can generally only have one configuration of a file in PROD with CVS. But, when that file is generated
+from numerous files as with a local watcher/build, we cannot stage isolated work in QA or BETA environments. Features cannot
+leap-frog each other in deployments or be selectively held back, as the single file will always reflect what is most
+up-to-date in the repository.
