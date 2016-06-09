@@ -12,7 +12,6 @@ class ListItem extends React.Component {
     }
 
     click(e) {
-        console.log(this);
         this.setState({index: 5});
     }
 
