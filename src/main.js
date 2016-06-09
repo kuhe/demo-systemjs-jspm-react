@@ -1,3 +1,10 @@
+// 0. Hot reload
+import 'systemjs-hot-reloader/default-listener.js';
+export function __reload(m) {
+    if (m.component.state)
+        component.setState(m.component.state);
+}
+
 // 1. Regular and Reliable, JavaScript
 // Make sure to enable import of _lib.min.js in index.html [npm run bundle]
 
@@ -21,20 +28,7 @@ while (n--) {
     numbers.push(n);
 }
 
-var __react_test = function(rows) {
-    ReactDOM.render(
-        React.createElement(List, {rows: rows}),
-        document.getElementById('main')
-    );
-};
-
-var main = function() {
-    console.log('hmm...');
-    __react_test(numbers);
-    return 0;
-};
-
-if (typeof window === 'object') {
-    window.__react_test = __react_test;
-    main();
-}
+export let component = ReactDOM.render(
+    React.createElement(List, {rows: numbers}),
+    document.getElementById('main')
+);

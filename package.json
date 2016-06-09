@@ -7,7 +7,10 @@
     "bundle": "jspm bundle src/_lib.js src_build/_lib.min.js --minify",
     "bundle-harmony": "jspm bundle src/_lib-harmony.js src_build/_lib-harmony.js",
     "bundle-prod": "jspm bundle src/main.js src_build/main.min.js --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules && rm -rf jspm_packages",
+    "install-all": "npm i && jspm install",
+    "hot-reload": "node node_modules/chokidar-socket-emitter/cli"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +19,7 @@
     "react-dom": "^0.14.7"
   },
   "devDependencies": {
+    "chokidar-socket-emitter": "^0.5.2",
     "jspm": "^0.17.0-beta.9",
     "systemjs-builder": "^0.15.10"
   },
@@ -23,34 +27,41 @@
     "name": "scratch",
     "dependencies": {
       "ansi-styles": "npm:ansi-styles@^2.2.1",
+      "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.8.0",
       "lodash": "npm:lodash@^4.6.1",
-      "react": "npm:react@^0.14.7",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12",
       "react-dom": "npm:react-dom@^0.14.7",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
       "systemjs-plugin-babel": "npm:systemjs-plugin-babel@^0.0.8"
     },
     "devDependencies": {
-      "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.6.0",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.7",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.6"
+      "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
+      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha"
     },
     "peerDependencies": {
       "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
       "core-js": "npm:core-js@^2.2.0",
       "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
       "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
-      "net": "github:jspm/nodelibs-net@^0.2.0-alpha",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "react": "npm:react@^0.14.7",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
-      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
       "util": "github:jspm/nodelibs-util@^0.2.0-alpha"
     },
     "overrides": {
-      "npm:babel-runtime@5.8.35": {
-        "main": false,
-        "dependencies": {},
-        "optionalDependencies": {
-          "core-js": "^1.2.0"
+      "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
         }
       },
       "npm:fbjs@0.6.1": {
@@ -60,6 +71,10 @@
         "ignore": [
           "test.js"
         ]
+      },
+      "npm:ms@0.7.1": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
       },
       "npm:react@0.14.7": {
         "dependencies": {

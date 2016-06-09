@@ -13,6 +13,6 @@ if (1) {
      */
 
     require('systemjs-plugin-babel');
-    require('../jspm_packages/npm/babel-plugin-transform-react-jsx@6.6.0/lib/index.js');
+    require('../jspm_packages/npm/babel-plugin-transform-react-jsx@6.8.0/lib/index.js');
 
 }

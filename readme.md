@@ -1,15 +1,28 @@
-#### JSPM 0.17 (beta) examples (optionally with ES6/JSX for React).
+#### JSPM 0.17 (beta) examples (optionally with ES6/JSX for React, and hot-reload).
+
+Tested on Node v6.2.1
 
 ### Installation
 
 First clone this repository, then in the root:
 
-    npm i
-    jspm install
+    > npm run install-all
 
-(installing additional npm modules with jspm > jspm install npm:module_name)
+(installing additional npm modules with jspm: > jspm install npm:module_name)
 
-### What is this?
+### Hot Reload guide
+
+As far as this demo goes, you can just run this:
+
+    > npm run hot-reload
+
+Then, modify for example List.js, and it'll re-render in your browser. It uses web-sockets and the
+modularity of your javascript to hot-reload components.
+
+Details here:
+[http://jspm.io/0.17-beta-guide/hot-reloading.html](http://jspm.io/0.17-beta-guide/hot-reloading.html)
+
+### What is this though?
 
 You get 3 bundling modes for JS apps: Normal, Harmony, and Production
 

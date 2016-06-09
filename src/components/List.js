@@ -18,6 +18,7 @@ var List = React.createClass({
             return <ListItem index={n} />;
         });
         return <ul>
+            Hi, I'm a list component.
             {rows}
         </ul>
     }

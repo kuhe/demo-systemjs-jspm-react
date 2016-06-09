@@ -35,6 +35,12 @@
                 }
             }
         });
+        if (location.origin.match(/localhost/)) {
+            System.trace = true;
+            System.import('systemjs-hot-reloader').then(function(HotReloader) {
+                new HotReloader.default('http://localhost:5776');  // chokidar-socket-emitter port
+            });
+        }
         System.import('src/main')
     </script>
 
