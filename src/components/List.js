@@ -1,19 +1,28 @@
 import { React, ReactDOM } from '../_lib.js';
 
-var ListItem = React.createClass({
-    getInitialState: function() {
-        return {index: this.props.index};
-    },
-    click: function(e) {
-        this.setState({index: 5});
-    },
-    render: function() {
-        return <li onClick={this.click}>n --> {this.state.index}</li>
-    }
-});
+class ListItem extends React.Component {
+    constructor(props) {
+        super(props);
 
-var List = React.createClass({
-    render: function() {
+        this.state = {
+            index: props.index
+        };
+
+        this.click = this.click.bind(this);
+    }
+
+    click(e) {
+        console.log(this);
+        this.setState({index: 5});
+    }
+
+    render() {
+        return <li onClick={this.click}>n --> {this.state.index}</li>;
+    }
+}
+
+class List extends React.Component {
+    render() {
         var rows = this.props.rows.map(function(n) {
             return <ListItem index={n} />;
         });
@@ -22,6 +31,6 @@ var List = React.createClass({
             {rows}
         </ul>
     }
-});
+}
 
 export { List };
