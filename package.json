@@ -1,8 +1,8 @@
 {
-  "name": "scratch",
+  "name": "demo-systemjs-jspm-react",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A reference configuration of in-browser JSX Harmony, and component hot-reload",
+  "main": "index.html",
   "scripts": {
     "bundle": "jspm bundle src/_lib.js src_build/_lib.min.js --minify",
     "bundle-harmony": "jspm bundle src/_lib-harmony.js src_build/_lib-harmony.js",

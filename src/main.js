@@ -14,13 +14,13 @@ export function __reload(m) {
 //var List = require('./components-es5/List.js');
 
 // 2. Harmony
-// Make sure to enable import of _lib-dev.js in index.html [npm run bundle-dev]
+// Make sure to enable import of _lib-dev.js in index.html [npm run bundle-harmony]
 
 import { React, ReactDOM } from './_lib.js';
 import { List } from './components/List.js';
 
 // 3. ES5 Bundled from Harmony
-// Make sure to enable import of main.min.js in index.html [npm run bundle-app]
+// Make sure to enable import of main.min.js in index.html [npm run bundle-prod]
 
 var numbers = [],
     n = 10000;
